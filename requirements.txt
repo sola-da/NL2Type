@@ -1,0 +1,13 @@
+tensorflow
+nltk
+gensim
+keras
+numpy
+pandas
+h5py
+matplotlib
+plotly
+gitpython
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
