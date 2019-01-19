@@ -2,8 +2,9 @@
   {
   "module":"enrich_results",
   "config":{
-    "input_file_path_results":"../results/predictions_paper.csv",
-    "input_file_path_data":"../data/paper/test.csv"
+    "input_file_path_results":"../results/predictions_paper_without_comments.csv",
+    "input_file_path_data":"../data/paper/test.csv",
+    "output_file_path":"../results/predictions_paper_without_comments_enriched.csv"
     }
   }
 ]
