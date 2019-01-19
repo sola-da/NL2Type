@@ -1,0 +1,8 @@
+[
+  {
+  "module":"stats",
+  "config":{
+    "input_file_path":"../results/predictions_paper.csv"
+    }
+  }
+]
