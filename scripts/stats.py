@@ -6,11 +6,11 @@ def invoke(config):
     results_df = pd.read_csv(config['input_file_path'])
     calculate_f1_scores(results_df)
     print ""
-    calculate_top_f1(results_df, 3)
-    print ""
-    calculate_top_f1(results_df, 5)
-    print ""
-    calculate_f1_scores_param_func(results_df)
+    # calculate_top_f1(results_df, 3)
+    # print ""
+    # calculate_top_f1(results_df, 5)
+    # print ""
+    # calculate_f1_scores_param_func(results_df)
 
 
 def calculate_f1_scores(df):
@@ -39,7 +39,7 @@ def calculate_top_f1(df, k):
     for index, row in df.iterrows():
         if row['prediction_string'] == 'other':
             continue
-        top_k = row['top_k'].split("%")[:k]
+        top_k = row['top_5'].split("%")[:k]
         # top_k = top_k_corpus[:k]
         if row['original'] in top_k:
             correct += 1

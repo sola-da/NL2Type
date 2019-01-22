@@ -44,8 +44,9 @@ def invoke(config):
     top_k = []
 
     # df = pd.read_csv(config['input_file'])
+    df_test = pd.read_csv(config['input_file'])
     for x in X_data:
-        # original.append(df_test.loc[index]['type'])
+        original.append(df_test.loc[index]['type'])
         if index % 100 == 0:
             print index
         prediction = np.argmax(Y_pred[index])
@@ -71,7 +72,7 @@ def invoke(config):
             index += 1
             continue
 
-        original.append(types_map[np.argmax(Y_data[index])])
+        # original.append(types_map[np.argmax(Y_data[index])])
         if np.argmax(Y_pred[index]) != np.argmax(Y_data[index]):
             mismatch.append(1)
         else:

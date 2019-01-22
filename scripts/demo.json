@@ -1,36 +1,34 @@
 [
   {
-  "module":"extract.jsdoc_extractor",
+  "module":"jsdoc_extractor",
   "config":{
     "input_dir":"../data/demo/files",
     "output_dir":"../data/demo/jsdoc_out"
     }
   },
   {
-    "module": "preprocess.jsdoc_to_csv",
+    "module": "jsdoc_to_csv",
     "config": {
       "input_dir":"../data/demo/jsdoc_out",
       "output_dir":"../data/demo/raw_csv"
     }
   },
   {
-    "module": "transform.csv_to_vecs",
+    "module": "csv_to_vecs",
     "config": {
-      "batch":true,
-      "input_file_path": "../data/demo_new/raw_csv/data_cleaned0.csv",
-      "output_dir": "../data/demo/vecs/_meta_data_type/vecs",
-      "output_dir_types":"..data/demo/vecs/_meta_types_count/_meta_data_type/types",
-      "out_name":"train",
-      "data_output_file_path": "../data/demo/vecs/_meta_types_count/vecs__meta_data_type",
-
-      "type_output_file_path": "/home/rabee/thesis/data/demo_new/vecs/_meta_types_count/types__meta_data_type",
-      "word2vec_code": "/home/rabee/thesis/data/demo_new/word2vec_model_code_100.bin",
-      "word2vec_language": "/home/rabee/thesis/data/demo_new/word2vec_model_language_100.bin",
-      "types_map_path":"/home/rabee/thesis/data/demo_new/vecs/_meta_types_count/types_map__meta_data_type.json",
+      "batch": false,
+      "input_file_path": "../data/demo/raw_csv/data_cleaned0.csv",
+      "output_dir": "../data/demo/vecs",
+      "data_output_file_path": "../data/demo/vecs/vecs_test",
+      "output_dir_types": "../data/demo/vecs",
+      "out_name": "test",
+      "word2vec_code": "../data/paper/word2vec_model_code.bin",
+      "word2vec_language": "../data/paper/word2vec_model_language.bin",
+      "type_output_file_path": "../data/demo/vecs/types",
       "vector_length": 100,
       "save_Y": false,
-      "types_file":"/home/rabee/thesis/data/demo_new/counts.csv",
-      "types_count":"_meta_types_count",
+      "types_file": "../data/paper/intermediate/counts.csv",
+      "types_count": 1000,
       "features": {
         "datapoint_type": 1,
         "cleaned_name": 6,
@@ -38,10 +36,17 @@
         "return_param_comment": 10,
         "params": 10
       }
-    },
-    "meta":{
-      "_meta_types_count":1000  ,
-      "_meta_data_type": "test"
-      }
     }
+  },
+  {
+    "module": "predict",
+    "config": {
+      "x_path":"../data/demo/vecs/vecs_test.npy",
+      "y_path":"../data/demo/vecs/types.npy",
+      "types_map":"../data/paper/vecs/types_map_train.json",
+      "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
+      "evaluations_output_file":"../results/demo/predicted.csv",
+      "model_path":"/home/rabee/thesis/data/demo_new/models/model_977.h5"
+    }
+  }
 ]
