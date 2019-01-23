@@ -21,13 +21,13 @@
       "output_dir": "../data/demo/vecs",
       "data_output_file_path": "../data/demo/vecs/vecs_test",
       "output_dir_types": "../data/demo/vecs",
-      "out_name": "test",
+      "out_name": "train",
       "word2vec_code": "../data/paper/word2vec_model_code.bin",
       "word2vec_language": "../data/paper/word2vec_model_language.bin",
       "type_output_file_path": "../data/demo/vecs/types",
       "vector_length": 100,
       "save_Y": false,
-      "types_file": "../data/paper/intermediate/counts.csv",
+      "types_file": "/home/rabee/thesis/data/demo_new/counts.csv",
       "types_count": 1000,
       "features": {
         "datapoint_type": 1,
@@ -36,14 +36,19 @@
         "return_param_comment": 10,
         "params": 10
       }
-    }
+    },
+    "meta":{
+      "_meta_types_count":1000,
+      "_meta_data_type": "test"
+      }
   },
+
   {
     "module": "predict",
     "config": {
       "x_path":"../data/demo/vecs/vecs_test.npy",
       "y_path":"../data/demo/vecs/types.npy",
-      "types_map":"../data/paper/vecs/types_map_train.json",
+      "types_map":"/home/rabee/thesis/data/demo_new/types_map_train.json",
       "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
       "evaluations_output_file":"../results/demo/predicted.csv",
       "model_path":"/home/rabee/thesis/data/demo_new/models/model_977.h5"

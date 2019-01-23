@@ -1,3 +1,3 @@
 ,mismatch,original,prediction,prediction_string,top_5
-0,1,*,622,other,other%array.<string>%element%object%string
-1,1,*,622,other,other%string%number%string|array.<string>%object
+0,1,*,247,element,element%object%other%number%array.<string>
+1,1,*,563,number,number%int%integer%complex%number|undefined

@@ -16,7 +16,6 @@ def invoke(config):
 
 
     funcs = []
-    print "number of files is: ", len(files)
     command = "jsdoc -X "
     num_funcs = 0
     count = 0
@@ -36,13 +35,12 @@ def invoke(config):
                 num_funcs += len(funcs)
                 funcs = []
         except subprocess.CalledProcessError:
-            print "Skipped a file!"
+            pass
 
     count += 1
     write_funcs_to_file(funcs, count, config['output_dir'])
     num_funcs += len(funcs)
 
-    print "the total number of functions processed is: {}".format(num_funcs)
 
 
 def to_valid_json(jsonString):

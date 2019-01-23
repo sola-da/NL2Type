@@ -6,11 +6,9 @@ import json
 
 
 def init_tf():
-    print "initing tf"
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
-    print 'done tf'
     return sess
 
 
@@ -18,15 +16,11 @@ def invoke(config):
     init_tf()
 
     model = load_model(str(config['model_path']))
-    print "model loaded"
     global graph
     graph = tf.get_default_graph()
 
-    print 'reading x'
     X_data = np.load(str(config['x_path']))
-    print 'readying y'
     Y_data = np.load(str(config['y_path']))
-    print 'done reading'
     global graph
     with graph.as_default():
         Y_pred = model.predict(X_data)
@@ -87,7 +81,6 @@ def invoke(config):
          "original":original,
          "top_5":top_k})
 
-    print "Mismatch value counts:\n {}".format(df['mismatch'].value_counts())
 
     df.to_csv(str(config['evaluations_output_file']))
 

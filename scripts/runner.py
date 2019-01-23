@@ -24,6 +24,7 @@ for module_config in configs:
         module_config_c = json.loads(conf_string)
     else:
         module_config_c = module_config['config']
+
     start_time = time.time()
     importlib.import_module(module_config['module']).invoke(module_config_c)
     print "Time taken: {} seconds".format(time.time() - start_time)

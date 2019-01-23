@@ -10,12 +10,11 @@ import os
 WORD_VEC_LENGTH = 100
 to_predict_feature = 'type'
 
+
 def invoke(config):
     global WORD_VEC_LENGTH
     WORD_VEC_LENGTH = config["vector_length"]
-    print "Reading df"
     df = pd.read_csv(config['input_file_path'])
-    print "Done reading df"
     if config['batch']:
         output_vecs_batch(df, config)
     else:
@@ -36,18 +35,15 @@ def output_vecs_batch(df, config):
     types_vecs_list = np.array_split(types_vecs, 4)
     count = 0
     for index, df_t in enumerate(df_list):
-        print df_t.shape
 
         output_file_name = config['out_name'] + "_" + str(index)
         vecs = df_to_vecs(df_t, Word2Vec.load(config['word2vec_code']), Word2Vec.load(config['word2vec_language']),
                           config['features'])
-        print "outputdir ", config["output_dir"]
-        print "saving in: ", os.path.join(config["output_dir"], output_file_name)
-        np.save(str(os.path.join(config["output_dir"], output_file_name)), vecs)
+        np.save(os.path.join(config["output_dir"], output_file_name), vecs)
 
         # types_vecs = type_to_vec(df_t)
         # np.save(os.path.join(config["output_dir_types"], output_file_name), types_vecs)
-        np.save(str(os.path.join(config["output_dir_types"], output_file_name)), types_vecs_list[count])
+        np.save(os.path.join(config["output_dir_types"], output_file_name), types_vecs_list[count])
 
         count += 1
 
@@ -59,11 +55,10 @@ def output_vecs_batch(df, config):
 
 
 def type_to_vec(df):
-    return pd.get_dummies(df[to_predict_feature]).as_matrix()
+    return pd.get_dummies(df[to_predict_feature]).values
 
 
 def map_type_to_vec(data, vec, types):
-    print "mapping types to vec: "
     np.set_printoptions(threshold=sys.maxsize)
     types_map = {}
     indices = set()
@@ -92,9 +87,7 @@ def map_type_to_vec(data, vec, types):
 
 
 def df_to_vecs(df, w2v_model_code, w2v_model_language, features):
-    print df.shape
     data = np.zeros((df.shape[0], sum(features.values()) + len(features.values()) - 1, WORD_VEC_LENGTH))
-    print data.shape
     count = 0
     for index, row in df.iterrows():
         if count % 5000 == 0:

@@ -31,9 +31,6 @@ def invoke(config):
     num_cleaned_comment = 0
 
     files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(config['input_dir']) for f in filenames]
-    print "the input dir is: {}".format(config['input_dir'])
-    print "the number of input files is: ", len(files)
-
 
     for file_index, input_file in enumerate(files):
         print ("processing file %d/%d" % (file_index + 1, len(files)))
@@ -169,13 +166,3 @@ def invoke(config):
                                      "return_param_comment": returnParam_comment})
 
         df.to_csv(os.path.join(config["output_dir"], "data_cleaned" + str(file_index) + ".csv"), encoding='utf-8')
-        print "writing to file: " + os.path.join(config["output_dir"], "data_cleaned" + str(file_index) + ".csv")
-    print "Comment length", num_comment
-    print "name length ", num_names
-    print "type length ", num_types
-    print "datapoint length ", num_datapoint
-    print "params length", num_params
-    print "return param comment", num_returnParamComment
-    print "filenames ", num_filenames
-    print "line numbers ", num_line_no
-    print "cleaned comment ", num_cleaned_comment

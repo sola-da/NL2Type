@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 
-
 def get_df_from_files(dir):
     files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(dir) for f in filenames]
 
@@ -27,3 +26,5 @@ def get_top_n_types(types_file, n):
 
     top_n.append("other")
     return top_n
+
+
