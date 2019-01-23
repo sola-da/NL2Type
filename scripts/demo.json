@@ -48,7 +48,7 @@
     "config": {
       "x_path":"../data/demo/vecs/vecs_test.npy",
       "y_path":"../data/demo/vecs/types.npy",
-      "types_map":"../data/demo/types_map_train.json",
+      "types_map":"../data/paper/types_map_train.json",
       "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
       "evaluations_output_file":"../results/demo/predicted.csv",
       "model_path":"../models/model_paper.h5"
