@@ -1,3 +1,4 @@
+mkdir ../data
 mkdir ../data/paper
 mkdir ../data/demo
 mkdir ../data/demo/files
