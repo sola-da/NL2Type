@@ -13,3 +13,4 @@ google-auth-httplib2
 google-auth-oauthlib
 progressbar
 fish
+nodeenv
