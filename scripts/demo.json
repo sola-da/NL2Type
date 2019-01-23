@@ -51,7 +51,7 @@
       "types_map":"/home/rabee/thesis/data/demo_new/types_map_train.json",
       "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
       "evaluations_output_file":"../results/demo/predicted.csv",
-      "model_path":"/home/rabee/thesis/data/demo_new/models/model_977.h5"
+      "model_path":"../models/model_paper.h5"
     }
   }
 ]
