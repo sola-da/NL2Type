@@ -61,28 +61,28 @@ def invoke(config):
             predictions_string.append("unknown")
 
             # print "Prediction string is: {}".format("unknown")
-            mismatch.append(1)
+            # mismatch.append(1)
             original.append(types_map[np.argmax(Y_data[index])])
             index += 1
             continue
 
         # original.append(types_map[np.argmax(Y_data[index])])
-        if np.argmax(Y_pred[index]) != np.argmax(Y_data[index]):
-            mismatch.append(1)
-        else:
-            mismatch.append(0)
+        # if np.argmax(Y_pred[index]) != np.argmax(Y_data[index]):
+        #     mismatch.append(1)
+        # else:
+        #     mismatch.append(0)
         index += 1
 
 
     df = pd.DataFrame.from_dict(
-        {"prediction": predictions,
-         "mismatch": mismatch,
-         "prediction_string": predictions_string,
-         "original":original,
+        {#"prediction": predictions,
+         # "mismatch": mismatch,
+         "prediction": predictions_string,
+         # "original":original,
          "top_5":top_k})
 
 
-    df.to_csv(str(config['evaluations_output_file']))
+    df.to_csv(str(config['evaluations_output_file']), index=False)
 
     return df
 

@@ -27,7 +27,6 @@
       "type_output_file_path": "../data/demo/vecs/types",
       "vector_length": 100,
       "save_Y": false,
-      "types_file": "/home/rabee/thesis/data/demo_new/counts.csv",
       "types_count": 1000,
       "features": {
         "datapoint_type": 1,
@@ -52,6 +51,14 @@
       "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
       "evaluations_output_file":"../results/demo/predicted.csv",
       "model_path":"../models/model_paper.h5"
+    }
+  },
+  {
+    "module": "enrich_results",
+    "config" : {
+      "results_file":"../results/demo/predicted.csv",
+      "output_file":"../results/demo/predicted.csv",
+      "data_file": "../data/demo/raw_csv/data_cleaned0.csv"
     }
   }
 ]

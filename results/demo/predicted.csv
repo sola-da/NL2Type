@@ -1,3 +1,3 @@
-,mismatch,original,prediction,prediction_string,top_5
-0,1,*,247,element,element%object%other%number%array.<string>
-1,1,*,563,number,number%int%integer%complex%number|undefined
+prediction,top_5,datapoint_type,filename,cleaned_name,cleaned_comment,return_param_comment,params
+element,element%object%other%number%array.<string>,1,/home/rabee/NL2Type/data/demo/files/example.js,a,desire apple,,
+number,number%int%integer%complex%number|undefined,0,/home/rabee/NL2Type/data/demo/files/example.js,get sum,,number,a
