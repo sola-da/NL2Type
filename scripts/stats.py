@@ -3,7 +3,6 @@ import pandas as pd
 
 
 def invoke(config):
-    print config
     results_df = pd.read_csv(config['input_file_path'])
     calculate_f1_scores(results_df)
 

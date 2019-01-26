@@ -14,6 +14,7 @@ to_predict_feature = 'type'
 features_list = ['comment', 'params', 'cleaned_name', 'return_param_comment']
 
 def invoke(config):
+
     global WORD_VEC_LENGTH
     WORD_VEC_LENGTH = config["vector_length"]
     df = pd.read_csv(config['input_file_path'])
@@ -21,9 +22,11 @@ def invoke(config):
         output_vecs_batch(df, config)
     else:
         vecs = df_to_vecs(df, Word2Vec.load(config['word2vec_code']), Word2Vec.load(config['word2vec_language']) , config['features'])
+        print '\twriting vecs to file'
         np.save(str(config['data_output_file_path']), vecs)
     if 'type_output_file_path' in config:
         types_vec = type_to_vec(df)
+        print '\twriting types to file'
         np.save(str(config['type_output_file_path']), types_vec)
         if 'types_map_path' in config:
             types_map = map_type_to_vec(df, types_vec, fu.get_top_n_types(config['types_file'], config['types_count']))
@@ -61,12 +64,13 @@ def type_to_vec(df):
 
 
 def map_type_to_vec(data, vec, types):
+    print '\tMapping types to vec'
     np.set_printoptions(threshold=sys.maxsize)
     types_map = {}
     indices = set()
     for i, t in enumerate(types):
-        if i % 10 == 0:
-            print i
+        # if i % 10 == 0:
+        #     print i
         try:
             index = data.loc[data['type'].str.match('^' + re.escape(t) + '$')].index[0]
         except IndexError:
@@ -93,7 +97,7 @@ def df_to_vecs(df, w2v_model_code, w2v_model_language, features):
     count = 0
     for index, row in df.iterrows():
         if count % 5000 == 0:
-            print "Processed: {}".format(count)
+            print "\tProcessed: {} points".format(count)
         data[count] = vectorize_row(row, w2v_model_code, w2v_model_language, np.ones(WORD_VEC_LENGTH), features)
         count += 1
     return data

@@ -5,6 +5,7 @@ import threading
 from glob import glob
 
 #/home/rabee/thesis/master_thesis_rabee_sohail/data_extraction/data/js_temp
+missed = 0
 threadLock = threading.Lock()
 output_file_index = 0
 num_funcs = 0
@@ -12,12 +13,16 @@ num_files = 0
 
 
 def invoke(config):
-    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(config['input_dir']) for f in filenames]
+    # files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(config['input_dir']) for f in filenames]
+    with open(config['input_file']) as files_list:
+        files = files_list.read().splitlines()
 
 
     funcs = []
+    print "number of files is: ", len(files)
     command = "jsdoc -X "
     num_funcs = 0
+    missed = 0
     count = 0
     for index, file in enumerate(files):
         try:
@@ -35,12 +40,13 @@ def invoke(config):
                 num_funcs += len(funcs)
                 funcs = []
         except subprocess.CalledProcessError:
-            pass
+            missed += 1
 
     count += 1
     write_funcs_to_file(funcs, count, config['output_dir'])
     num_funcs += len(funcs)
 
+    print "the number of files missed is: {}, the total number of functions processed is: {}".format(missed, num_funcs)
 
 
 def to_valid_json(jsonString):

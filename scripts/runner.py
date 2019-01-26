@@ -26,5 +26,6 @@ for module_config in configs:
         module_config_c = module_config['config']
 
     start_time = time.time()
+    print "Running script: {}".format(module_config['module'])
     importlib.import_module(module_config['module']).invoke(module_config_c)
     print "Time taken: {} seconds".format(time.time() - start_time)

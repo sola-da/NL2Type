@@ -2,7 +2,7 @@
   {
   "module":"stats",
   "config":{
-    "input_file_path":"../data/paper/results.csv", 
+    "input_file_path":"../data/paper/results/results.csv", 
     "detailed": true
     }
   }

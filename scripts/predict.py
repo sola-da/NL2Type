@@ -23,6 +23,7 @@ def invoke(config):
     Y_data = np.load(str(config['y_path']))
     global graph
     with graph.as_default():
+        print '\tMaking predictions'
         Y_pred = model.predict(X_data)
     # np.save(config['predictions_output_file'], Y_pred)
 
@@ -41,8 +42,8 @@ def invoke(config):
     df_test = pd.read_csv(config['input_file'])
     for x in X_data:
         original.append(df_test.loc[index]['type'])
-        if index % 100 == 0:
-            print index
+        if index % 10000 == 0:
+            print "\tProcessed {} data points out of {}".format(index, len(X_data))
         prediction = np.argmax(Y_pred[index])
         predictions.append(prediction)
         # print "Prediction is: {}".format(prediction)

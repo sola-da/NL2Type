@@ -1,0 +1,9 @@
+[
+  {
+    "module": "jsdoc_extractor",
+    "config": {
+      "input_file":"",
+      "output_dir": ""
+    }
+  }
+]
