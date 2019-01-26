@@ -2,8 +2,7 @@
   {
     "module":"generate_file_split_list",
     "config":{
-      "input_dir":"/home/rabee/thesis/data/js_files/data",
-      "extension":".js_beautified.js",
+      "input_file":"/home/rabee/thesis/data/js_files/data",
       "output_dir":"../data/paper"
     }
   }
