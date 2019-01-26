@@ -31,7 +31,7 @@ npm install jsdoc
 ```
 
 ## Replicating the results
-- The model used in the paper is in data/paper/model.h5
+- The model used in the paper is in models/model.h5
 
 - The files used for training the model are in data/paper/js\_files/training and the files used for testing are in data/paper/js\_files/testing. 
 
