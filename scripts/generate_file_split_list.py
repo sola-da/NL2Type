@@ -11,7 +11,7 @@ def invoke(config):
 
     print len(files_training)
     print len(files_testing)
-
+    #print files
     # with open(os.path.join(config['output_dir'], "training.txt"), 'w') as f:
     #     for f_t in files_training:
     #         f.write(f_t + "\n")
@@ -19,3 +19,4 @@ def invoke(config):
     # with open(os.path.join(config['output_dir'], "testing.txt"), 'w') as f:
     #     for f_t in files_testing:
     #         f.write(f_t + "\n")
+
