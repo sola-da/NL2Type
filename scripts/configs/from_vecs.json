@@ -46,10 +46,12 @@
     "output_file":"../data/paper/results_new_enriched.csv"
     }
   },
+  
   {
   "module":"stats",
   "config":{
-    "input_file_path":"../data/paper/results.csv"
+    "input_file_path":"../data/paper/results_new_enriched.csv",
+    "detailed":false
     }
   }
 ]
