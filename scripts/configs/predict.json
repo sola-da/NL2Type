@@ -6,7 +6,7 @@
       "y_path":"../data/paper/vecs/types.npy",
       "types_map":"../data/paper/vecs/types_map_train.json",
       "input_file":"../data/paper/intermediate/test.csv",
-      "evaluations_output_file":"../results/predicted.csv",
+      "evaluations_output_file":"../results/predicted_from_vecs.csv",
       "model_path":"../models/model_paper.h5"
     }
   }

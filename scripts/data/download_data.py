@@ -1,6 +1,4 @@
 import requests
-import json
-
 import sys
 
 
@@ -33,15 +31,7 @@ def save_response_content(response, destination):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
 
-
 if __name__ == "__main__":
-    if(len(sys.argv) != 2):
-        print "Incorrect number of args. Expecting one arg"
-        exit(1)
-
-    with(open(sys.argv[1])) as f:
-        configs = json.loads(f.read())
-        print arr
-
-    for conf in configs:
-        download_file_from_google_drive(conf['file_id'], conf['destination'])
+    file_id = sys.argv[1]
+    destination = sys.argv[2]
+    download_file_from_google_drive(file_id, destination)

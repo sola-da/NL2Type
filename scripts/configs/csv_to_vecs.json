@@ -10,11 +10,9 @@
       "out_name": "test",
       "word2vec_code": "../data/paper/word2vec_model_code.bin",
       "word2vec_language": "../data/paper/word2vec_model_language.bin",
-      "types_map_path": "../data/paper/intermediate/types_map_test.json",
       "type_output_file_path": "../data/paper/vecs/types",
       "vector_length": 100,
       "save_Y": false,
-      "types_file": "../data/paper/intermediate/counts.csv",
       "types_count": 1000,
       "features": {
         "datapoint_type": 1,
@@ -22,6 +20,10 @@
         "comment": 12,
         "return_param_comment": 10,
         "params": 10
+      },
+      "meta":{
+        "_meta_types_count":1000,
+        "_meta_data_type": "test"
       }
     }
   }

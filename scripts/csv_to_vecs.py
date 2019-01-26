@@ -11,6 +11,8 @@ WORD_VEC_LENGTH = 100
 to_predict_feature = 'type'
 
 
+features_list = ['comment', 'params', 'cleaned_name', 'return_param_comment']
+
 def invoke(config):
     global WORD_VEC_LENGTH
     WORD_VEC_LENGTH = config["vector_length"]
@@ -103,7 +105,11 @@ def vectorize_row(row, w2v_model_code, w2v_model_language, separator, features):
     datapoint[1] = separator
 
     datapoint_index = 2
-    for feature_name, feature_length in features.iteritems():
+    # print "Start of row!"
+    # for featurename, feature_length in features.iteritems():
+    for feature_name in features_list:
+        feature_length = features[feature_name]
+        # print "Feature name: ", feature_name
         if type(row[feature_name]) is str:
             if feature_name == "cleaned_name" or feature_name == "params":
                 vectorized_feature = vectorize_string(row[feature_name], feature_length, w2v_model_code)

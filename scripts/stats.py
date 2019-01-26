@@ -19,9 +19,9 @@ def calculate_f1_scores(df):
     total = df.shape[0]
 
     for index, row in df.iterrows():
-        if row['prediction_string'] != 'other':
+        if row['prediction'] != 'other':
             predictions += 1
-            if row['original'] == row['prediction_string']:
+            if row['original'] == row['prediction']:
                 correct += 1
 
     print "prediction: {}, correct: {}, total:{}".format(predictions, correct, total)
@@ -37,7 +37,7 @@ def calculate_top_f1(df, k):
     total = 0
     # top_k_corpus = ['string', 'number', 'object', 'boolean', 'function']
     for index, row in df.iterrows():
-        if row['prediction_string'] == 'other':
+        if row['prediction'] == 'other':
             continue
         top_k = row['top_5'].split("%")[:k]
         # top_k = top_k_corpus[:k]
@@ -65,9 +65,9 @@ def calculate_f1_scores_param_func(df):
     for index, row in df.iterrows():
         if df.loc[index, 'datapoint_type'] == 1:
             continue
-        if row['prediction_string'] != 'other':
+        if row['prediction'] != 'other':
             predictions += 1
-            if row['original'] == row['prediction_string']:
+            if row['original'] == row['prediction']:
                 correct += 1
 
     precision = correct / predictions
@@ -82,9 +82,9 @@ def calculate_f1_scores_param_func(df):
     for index, row in df.iterrows():
         if df.loc[index, 'datapoint_type'] == 0:
             continue
-        if row['prediction_string'] != 'other':
+        if row['prediction'] != 'other':
             predictions += 1
-            if row['original'] == row['prediction_string']:
+            if row['original'] == row['prediction']:
                 correct += 1
 
     precision = correct / predictions
