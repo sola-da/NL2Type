@@ -1,4 +1,0 @@
-prediction,top_5
-string,string%number|string%object%other%mixed
-number,number%string%number|string%other%date
-string,string%other%number%object%mixed
