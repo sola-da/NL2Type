@@ -38,13 +38,13 @@ npm install jsdoc
 - The main results file from the paper is data/paper/results/results.csv. The following commands calculate the figures in Table 1 in the paper from this results file:
 ```shell
 cd scripts
-python runner.py --config configs/stats\_paper.json
+python runner.py --config configs/stats_paper.json
 ```
 The results for the model trained only on names and not on comments is data/paper/results/predictions\_paper\_no\_comments.csv. The following commands calculate the figures for no comments in Table 1 in the paper from this file:
 
 ```shell
 cd scripts
-python runner.py --config configs/stats\_paper\_no\_comments.json
+python runner.py --config configs/stats_paper_no_comments.json
 ```
 
 In the results file, the column "original" contains the actual type of the datapoint, the column "top\_5\_prediction" refer to the top 5 most likely predictions as explained in the paper, separated by the token "%".
@@ -52,7 +52,7 @@ In the results file, the column "original" contains the actual type of the datap
 - To use the model to make predictions using the same test data as used in the paper, run the following commands:
 ```shell
 cd scripts
-python runner.py --config/from\_vecs.json
+python runner.py --config/from_vecs.json
 ```
 This makes predictions for the points present in the file data/paper/raw\_csv/test.csv
 The generated results file will be data/results\_new\_enriched.csv. 
