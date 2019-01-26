@@ -10,8 +10,23 @@ NL2Type: Inferring JavaScript Function Types from Natural Language Information
 resides
 
 ## Setup steps
+
+- First install the virtual environment
+  pip2 install virtualenv
+
+- Now install the dependencies using the following command
+```shell
+pip2 install --upgrade -r requirements.txt
+```
+```
+- Download a required Node.js package using the following command
+```shell
+npm install jsdoc
+```
+
 - Download all required data from this link, place it in _current directory_ and unzip it.
 
+## Replicating the results
 - The model used in the paper is in data/paper/model.h5
 
 - The files used for training the model are in data/paper/js_files/training and the files used for testing are in data/paper/js_files/testing. 
@@ -26,9 +41,9 @@ In the results file, the column "original" contains the actual type of the datap
 ```cd scripts
 python runner.py --config/from_vecs.json
 ```
-
 The generate results file will be data/results_new_enriched.csv. 
 
+## Demo
 
 - To make predictions on some Javascript files of your own choosing, using the model used in the paper, place some Javascript files in data/demo/files and then run the following commands:
 
