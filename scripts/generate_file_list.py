@@ -11,7 +11,10 @@ def invoke(config):
 
     with open(os.path.join(config['output_dir'], "files.txt"), 'w') as f:
         for f_t in files:
-            f.write(f_t + "\n")
+	    try:
+            	f.write(f_t + "\n")
+	    except:
+		continue
 
     # with open(os.path.join(config['output_dir'], "testing.txt"), 'w') as f:
     #     for f_t in files_testing:
