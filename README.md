@@ -18,7 +18,7 @@ resides
 ```shell
 pip2 install --upgrade -r requirements.txt
 ```
-```
+
 - Download a required Node.js package using the following command
 ```shell
 npm install jsdoc
@@ -32,24 +32,37 @@ npm install jsdoc
 - The files used for training the model are in data/paper/js_files/training and the files used for testing are in data/paper/js_files/testing. 
 
 - The results file from the paper is data/paper/results.csv. The following commands calculate the figures in Table x in the paper from this results file:
-```cd scripts
+```shell
+cd scripts
 python runner.py --config configs/stats_paper.json
 ```
 In the results file, the column "original" contains the actual type of the datapoint, the column "top_5_prediction" refer to the top 5 most likely predictions as explained in the paper, separated by the token "%".
 
 - To use the model to make predictions using the same test data as used in the paper, run the following commands:
-```cd scripts
+```shell
+cd scripts
 python runner.py --config/from_vecs.json
 ```
 The generate results file will be data/results_new_enriched.csv. 
 
+- To train a new model on a new training set:
+
+```shell
+cd scripts
+python runner.py --config/from_scratch.json
+```
+
+Please not that this may take several hours to complete.
 ## Demo
 
 - To make predictions on some Javascript files of your own choosing, using the model used in the paper, place some Javascript files in data/demo/files and then run the following commands:
 
-```cd scripts
+```shell
+cd scripts
 python runner.py --config configs/demo.json
 ```
+
+Please ensure that the Javascript files have some JSDoc annotations as these are used for extracting the natural language information used for training and testing the model.
 
 The predictions for the files will be data/demo/results/results.csv
 

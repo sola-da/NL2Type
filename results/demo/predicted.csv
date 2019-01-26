@@ -1,4 +1,4 @@
-prediction,top_5,datapoint_type,cleaned_name,cleaned_comment,return_param_comment,params,filename,line_number
-element,element%object%other%number%array.<string>,1,a,desire apple,,,/home/rabee/NL2Type/data/demo/files/example.js,6
-number,number%int%integer%complex%number|undefined,0,get sum,,number,a,/home/rabee/NL2Type/data/demo/files/example.js,6
-other,other%htmldivelement%element%array%goog.math.coordinate,0,get square root,,,,/home/rabee/NL2Type/data/demo/files/example2.js,2
+prediction,top_5
+string,string%number|string%object%other%mixed
+number,number%string%number|string%other%date
+string,string%other%number%object%mixed

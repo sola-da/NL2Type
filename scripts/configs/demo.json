@@ -47,17 +47,17 @@
     "config": {
       "x_path":"../data/demo/vecs/vecs_test.npy",
       "y_path":"../data/demo/vecs/types.npy",
-      "types_map":"../data/paper/types_map_train.json",
+      "types_map":"../data/paper/vecs/types.json",
       "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
-      "evaluations_output_file":"../results/demo/predicted.csv",
+      "evaluations_output_file":"../data/demo/predicted.csv",
       "model_path":"../models/model_paper.h5"
     }
   },
   {
     "module": "enrich_results",
     "config" : {
-      "results_file":"../results/demo/predicted.csv",
-      "output_file":"../results/demo/predicted.csv",
+      "results_file":"../data/demo/predicted.csv",
+      "output_file":"../data/demo/predicted.csv",
       "data_file": "../data/demo/raw_csv/data_cleaned0.csv"
     }
   }
