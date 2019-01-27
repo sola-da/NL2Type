@@ -12,7 +12,9 @@ resides
 
 ## Download data
 
-- Download some intermediate data from [this link](https://drive.google.com/file/d/1JUjvliIV76_LtqoZvcIVAOfZUBeGgVFk/view?usp=sharing), place it in _current directory_ and unzip it.
+- Download some results and required data from [this link](https://drive.google.com/file/d/1JUjvliIV76_LtqoZvcIVAOfZUBeGgVFk/view?usp=sharing), place it in _current directory_ and unzip it.
+
+- To download the files used for training and testing the model used in the paper, [use this link](https://drive.google.com/open?id=1tk-h3O-nTQ3X-cPZ5D7aaaLTUtLgVvwt). The files used for training the model are in "training_files" and the files used in testing are in "testing_files"
 
 ## Setup steps
 The steps in this section can be ignored if you are using the docker container
@@ -28,10 +30,10 @@ sudo apt-get install -y nodejs
 npm install jsdoc
 ```
 
-## Replicating the results
+## Results and replication
+
 - The model used in the paper is in models/model.h5
 
-- The files used for training the model are in data/paper/js\_files/training and the files used for testing are in data/paper/js\_files/testing.
 
 - The main results file from the paper is data/paper/results/results.csv. The following commands calculate the figures in Table 1 in the paper from this results file:
 ```shell
@@ -45,12 +47,16 @@ python2 scripts/runner.py --config scripts/configs/stats_paper_no_comments.json
 
 In the results file, the column "original" contains the actual type of the datapoint, the column "top\_5\_prediction" refer to the top 5 most likely predictions as explained in the paper, separated by the token "%".
 
+The column "datapoint_type" indicated whether the point is a function or parameter, with the value 0 for a function and 1 for a parameter.
+
 - To use the model to make predictions using the same test data as used in the paper, run the following commands:
 ```shell
 python2 scripts/runner.py --config scripts/configs/from_vecs.json
 ```
 This makes predictions for the points present in the file data/paper/raw\_csv/test.csv
 The generated results file will be data/results\_new\_enriched.csv.
+
+- The results from the inconsistency analysis are in data/paper/results/inconsistency_analysis_paper.csv
 
 ## Demo
 
