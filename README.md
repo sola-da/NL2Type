@@ -22,8 +22,9 @@ The steps in this section can be ignored if you are using the docker container
 pip2 install --upgrade -r requirements.txt
 ```
 
-- Download a required Node.js package using the following command
+- Install Node.js and also download a required Node.js package using the following command
 ```shell
+sudo apt-get install -y nodejs
 npm install jsdoc
 ```
 
