@@ -57,8 +57,7 @@ The generated results file will be data/results\_new\_enriched.csv.
 - To make predictions on some Javascript files of your own choosing, using the model used in the paper, place some Javascript files in data/demo/files and then run the following commands:
 
 ```shell
-cd scripts
-python runner.py --config configs/demo.json
+python2 runner.py --config scripts/configs/demo.json
 ```
 
 Please ensure that the Javascript files have some JSDoc annotations as these are used for extracting the natural language information used for training and testing the model.
