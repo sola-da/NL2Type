@@ -1,11 +1,11 @@
-
+#!/usr/bin/env python2
 import time
 
 import argparse
 import json
 import importlib
 
-
+print "Running..."
 parser = argparse.ArgumentParser(description="Preprocess data")
 parser.add_argument("--config", help="Path to a config file")
 args = parser.parse_args()

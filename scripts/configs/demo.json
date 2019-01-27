@@ -2,29 +2,29 @@
   {
   "module":"jsdoc_extractor",
   "config":{
-    "input_dir":"../data/demo/files",
-    "output_dir":"../data/demo/jsdoc_out"
+    "input_dir":"data/demo/files",
+    "output_dir":"data/demo/jsdoc_out"
     }
   },
   {
     "module": "jsdoc_to_csv",
     "config": {
-      "input_dir":"../data/demo/jsdoc_out",
-      "output_dir":"../data/demo/raw_csv"
+      "input_dir":"data/demo/jsdoc_out",
+      "output_dir":"data/demo/raw_csv"
     }
   },
   {
     "module": "csv_to_vecs",
     "config": {
       "batch": false,
-      "input_file_path": "../data/demo/raw_csv/data_cleaned0.csv",
-      "output_dir": "../data/demo/vecs",
-      "data_output_file_path": "../data/demo/vecs/vecs_test",
-      "output_dir_types": "../data/demo/vecs",
+      "input_file_path": "data/demo/raw_csv/data_cleaned0.csv",
+      "output_dir": "data/demo/vecs",
+      "data_output_file_path": "data/demo/vecs/vecs_test",
+      "output_dir_types": "data/demo/vecs",
       "out_name": "train",
-      "word2vec_code": "../data/paper/word2vec_model_code.bin",
-      "word2vec_language": "../data/paper/word2vec_model_language.bin",
-      "type_output_file_path": "../data/demo/vecs/types",
+      "word2vec_code": "data/paper/word2vec_model_code.bin",
+      "word2vec_language": "data/paper/word2vec_model_language.bin",
+      "type_output_file_path": "data/demo/vecs/types",
       "vector_length": 100,
       "save_Y": false,
       "types_count": 1000,
@@ -45,20 +45,20 @@
   {
     "module": "predict",
     "config": {
-      "x_path":"../data/demo/vecs/vecs_test.npy",
-      "y_path":"../data/demo/vecs/types.npy",
-      "types_map":"../data/paper/vecs/types.json",
-      "input_file":"../data/demo/raw_csv/data_cleaned0.csv",
-      "evaluations_output_file":"../data/demo/predicted.csv",
-      "model_path":"../models/model_paper.h5"
+      "x_path":"data/demo/vecs/vecs_test.npy",
+      "y_path":"data/demo/vecs/types.npy",
+      "types_map":"data/paper/vecs/types.json",
+      "input_file":"data/demo/raw_csv/data_cleaned0.csv",
+      "evaluations_output_file":"data/demo/predicted.csv",
+      "model_path":"models/model_paper.h5"
     }
   },
   {
     "module": "enrich_results",
     "config" : {
-      "results_file":"../data/demo/predicted.csv",
-      "output_file":"../data/demo/predicted.csv",
-      "data_file": "../data/demo/raw_csv/data_cleaned0.csv"
+      "results_file":"data/demo/predicted.csv",
+      "output_file":"data/demo/predicted.csv",
+      "data_file": "data/demo/raw_csv/data_cleaned0.csv"
     }
   }
 ]
