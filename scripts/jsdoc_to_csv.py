@@ -7,6 +7,7 @@ import nltk
 
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 def get_line_number(function):
     if "meta" in function and "lineno" in function["meta"]:
