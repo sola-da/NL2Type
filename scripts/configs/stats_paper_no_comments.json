@@ -2,7 +2,7 @@
   {
   "module":"stats",
   "config":{
-    "input_file_path":"../data/paper/results/predictions_paper_no_comments.csv", 
+    "input_file_path":"data/paper/results/predictions_paper_no_comments.csv", 
     "detailed": true
     }
   }

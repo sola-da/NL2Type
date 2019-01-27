@@ -3,14 +3,14 @@
     "module": "csv_to_vecs",
     "config": {
       "batch": false,
-      "input_file_path": "../data/paper/raw_csv/test.csv",
-      "output_dir": "../data/paper/vecs",
-      "data_output_file_path": "../data/paper/vecs/vecs_test",
-      "output_dir_types": "../data/paper",
+      "input_file_path": "data/paper/raw_csv/test.csv",
+      "output_dir": "data/paper/vecs",
+      "data_output_file_path": "data/paper/vecs/vecs_test",
+      "output_dir_types": "data/paper",
       "out_name": "test",
-      "word2vec_code": "../data/paper/word2vec_model_code.bin",
-      "word2vec_language": "../data/paper/word2vec_model_language.bin",
-      "type_output_file_path": "../data/paper/vecs/types",
+      "word2vec_code": "data/paper/word2vec_model_code.bin",
+      "word2vec_language": "data/paper/word2vec_model_language.bin",
+      "type_output_file_path": "data/paper/vecs/types",
       "vector_length": 100,
       "save_Y": false,
       "types_count": 1000,
@@ -30,27 +30,27 @@
  {
     "module": "predict",
     "config": {
-      "x_path":"../data/paper/vecs/vecs_test.npy",
-      "y_path":"../data/paper/vecs/types.npy",
-      "types_map":"../data/paper/vecs/types.json",
-      "input_file":"../data/paper/raw_csv/test.csv",
-      "evaluations_output_file":"../data/paper/results_new.csv",
-      "model_path":"../models/model_paper.h5"
+      "x_path":"data/paper/vecs/vecs_test.npy",
+      "y_path":"data/paper/vecs/types.npy",
+      "types_map":"data/paper/vecs/types.json",
+      "input_file":"data/paper/raw_csv/test.csv",
+      "evaluations_output_file":"data/paper/results_new.csv",
+      "model_path":"models/model_paper.h5"
     }
   },
   {
   "module":"enrich_results",
   "config":{
-    "results_file":"../data/paper/results_new.csv",
-    "data_file":"../data/paper/raw_csv/test.csv",
-    "output_file":"../data/paper/results_new_enriched.csv"
+    "results_file":"data/paper/results_new.csv",
+    "data_file":"data/paper/raw_csv/test.csv",
+    "output_file":"data/paper/results_new_enriched.csv"
     }
   },
-  
+
   {
   "module":"stats",
   "config":{
-    "input_file_path":"../data/paper/results_new_enriched.csv",
+    "input_file_path":"data/paper/results_new_enriched.csv",
     "detailed":false
     }
   }
