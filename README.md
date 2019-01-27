@@ -14,7 +14,7 @@ resides
 
 - Download some results and required data from [this link](https://drive.google.com/file/d/1JUjvliIV76_LtqoZvcIVAOfZUBeGgVFk/view?usp=sharing), place it in _current directory_ and unzip it.
 
-- To download the files used for training and testing the model used in the paper, [use this link](https://drive.google.com/open?id=1tk-h3O-nTQ3X-cPZ5D7aaaLTUtLgVvwt).
+- To download the files used for training and testing the model used in the paper, [use this link](https://drive.google.com/open?id=1tk-h3O-nTQ3X-cPZ5D7aaaLTUtLgVvwt). The files used for training the model are in "training_files" and the files used in testing are in "testing_files"
 
 ## Setup steps
 The steps in this section can be ignored if you are using the docker container
@@ -34,7 +34,6 @@ npm install jsdoc
 
 - The model used in the paper is in models/model.h5
 
-- The files used for training the model are in data/paper/js\_files/training and the files used for testing are in data/paper/js\_files/testing.
 
 - The main results file from the paper is data/paper/results/results.csv. The following commands calculate the figures in Table 1 in the paper from this results file:
 ```shell
