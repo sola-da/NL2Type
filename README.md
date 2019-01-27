@@ -12,7 +12,7 @@ resides
 
 ## Download data
 
-- Download some intermediate data from [this link](https://drive.google.com/file/d/1wb_rS3pmMQ2g-YOxenGDKMSFg4kIUciR/view?usp=sharing), place it in _current directory_ and unzip it.
+- Download some intermediate data from [this link](https://drive.google.com/file/d/1JUjvliIV76_LtqoZvcIVAOfZUBeGgVFk/view?usp=sharing), place it in _current directory_ and unzip it.
 
 ## Setup steps
 The steps in this section can be ignored if you are using the docker container
