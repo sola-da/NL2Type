@@ -13,9 +13,9 @@ num_files = 0
 
 
 def invoke(config):
-    # files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(config['input_dir']) for f in filenames]
-    with open(config['input_file']) as files_list:
-        files = files_list.read().splitlines()
+    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(config['input_dir']) for f in filenames]
+    # with open(config['input_file']) as files_list:
+    #     files = files_list.read().splitlines()
 
 
     funcs = []
