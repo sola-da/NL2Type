@@ -1,9 +1,3 @@
-<!-- ## Download data
-
-- Download some results and required data from [this link](https://drive.google.com/file/d/1JUjvliIV76_LtqoZvcIVAOfZUBeGgVFk/view?usp=sharing), place it in _current directory_ and unzip it.
-
-- To download the files used for training and testing the model used in the paper, [use this link](https://drive.google.com/open?id=1tk-h3O-nTQ3X-cPZ5D7aaaLTUtLgVvwt). The files used for training the model are in "training_files" and the files used in testing are in "testing_files" -->
-
 ## Using Docker for replication
 ### Install docker
 Install _docker_ for your environment. We have tested on docker version 18.09.1, build 4c52b90 on Ubuntu 18.04. One may also follow the official install instructions from here:
@@ -16,19 +10,19 @@ the unzipped _data_ folder is placed in the home directory. Please adapt the abs
 
 The template command for running the containers is
 ```shell
+# Pull the container
 docker pull jibesh/nl2type:TAG
+# Execute the script
 docker run -v PATH_TO_DATA_DIR:/data jibesh/nl2type:TAG
 ```
 
 PS: You might need to prepend _sudo_ to each of the following commands
 
-### Download the containers
+### Download the containers and run experiments
 
 1. To replicate the results from Table 1 of our paper, run the following commands:
 ```shell
-# Pull the container
 docker pull jibesh/nl2type:table1
-# Execute the script
 docker run -v /home/USER_NAME/data:/data jibesh/nl2type:table1
 ```
 Results are printed on the terminal which corresponds to the first row of Table 1 (Approach: NL2Type) of
