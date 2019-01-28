@@ -2,8 +2,8 @@
   {
     "module":"split_file_list",
     "config":{
-      "input_file":"../data/paper/files_small.txt",
-      "output_dir":"../data/paper"
+      "input_file":"data/paper/files_small.txt",
+      "output_dir":"data/paper"
     }
   }
 ]

@@ -3,7 +3,7 @@
     "module":"generate_file_split_list",
     "config":{
       "input_file":"/home/rabee/thesis/data/js_files/data",
-      "output_dir":"../data/paper"
+      "output_dir":"data/paper"
     }
   }
 ]
