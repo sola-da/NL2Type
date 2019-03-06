@@ -1,6 +1,7 @@
 # NL2Type 🔵
 NL2Type: Inferring JavaScript Function Types from Natural Language Information
-The repository for this submission is : https://github.com/sola-da/NL2Type
+
+[ICSE'19 paper](http://software-lab.org/publications/icse2019_NL2Type.pdf)
 
 ## Using Docker for replication
 ### Install docker
